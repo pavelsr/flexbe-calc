@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bamberjp/jQuery-Colorwheel@master/dist/jquery.colorwheel.css" />
+  <title>Калькулятор</title>
+</head>
+<body>
+
+  <div class="container calculator mt-5 pt-4 pb-4 rounded gray-shadow" id="calcDiv">
+    <form id="mainForm" class="calc" method="POST" action="sendBig.php">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Калькулятор стоимости вывески</h1>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputSymbolsCount" class="col-sm-3 col-form-label">Количество букв</label>
+          <div class="col-sm-9">
+            <input type="number" name="symbol_count" class="form-control" id="inputSymbolsCount" placeholder="5" value="25" size="2">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputSymbolsCount" class="col-sm-3 col-form-label">Высота букв, см</label>
+          <div class="col-sm-9">
+            <input type="number" name="symbol_height" class="form-control" id="inputSymbolsHeight" placeholder="5" value="50" size="2" min="5" max="60">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputLightType">Тип подсветки</label>
+          <select name="light_type" class="form-control" id="inputLightType">
+            <option data-price="40" value="no_light">Не световая</option>
+            <option data-price="60" value="front_light">Световая</option>
+            <option data-price="65" value="back_light" selected>Световая, с контражуром (прозрачный задник)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputFaceColor">Цвет "лица"</label>
+          <select name="face_color" class="form-control" id="inputFaceColor">
+            <option data-price="0">Белый (Oracal 641 010)</option>
+            <option data-price="3">Oracal 8500 020</option>
+            <option data-price="3">Oracal 8500 023</option>
+            <option data-price="3">Oracal 8500 025</option>
+            <option data-price="3" selected>Oracal 8500 026</option>
+            <option data-price="3">Oracal 8500 032</option>
+            <option data-price="3">Oracal 8500 034</option>
+            <option data-price="3">Oracal 8500 036</option>
+            <option data-price="3">Oracal 8500 043</option>
+            <option data-price="3">Oracal 8500 045</option>
+            <option data-price="3">Oracal 8500 047</option>
+            <option data-price="3">Oracal 8500 050</option>
+            <option data-price="3">Oracal 8500 056</option>
+            <option data-price="3">Oracal 8500 060</option>
+            <option data-price="3">Oracal 8500 063</option>
+            <option data-price="3">Oracal 8500 070</option>
+            <option data-price="3">Oracal 8500 071</option>
+            <option data-price="3">Oracal 8500 080</option>
+            <option data-price="3">Oracal 8500 082</option>
+            <option data-price="3">Oracal 8500 084</option>
+            <option data-price="3">Oracal 8500 404</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputSideColor">Цвет борта</label>
+          <select name="side_color" class="form-control" id="inputSideColor">
+            <option data-price="0">Черный (RAL 9005)</option>
+            <option data-price="0">Белый (RAL 9003)</option>
+            <option data-price="2">RAL 1021</option>
+            <option data-price="2">RAL 2009</option>
+            <option data-price="2">RAL 3020</option>
+            <option data-price="2">RAL 5002</option>
+            <option data-price="2">RAL 6018</option>
+            <option data-price="2">RAL 8017</option>
+            <option data-price="5">Oracal 641 020M</option>
+            <option data-price="5">Oracal 641 023M</option>
+            <option data-price="5">Oracal 641 025M</option>
+            <option data-price="5" selected>Oracal 641 026M</option>
+            <option data-price="5">Oracal 641 032M</option>
+            <option data-price="5">Oracal 641 034M</option>
+            <option data-price="5">Oracal 641 036M</option>
+            <option data-price="5">Oracal 641 043M</option>
+            <option data-price="5">Oracal 641 045M</option>
+            <option data-price="5">Oracal 641 047M</option>
+            <option data-price="5">Oracal 641 050M</option>
+            <option data-price="5">Oracal 641 056M</option>
+            <option data-price="5">Oracal 641 060M</option>
+            <option data-price="5">Oracal 641 063M</option>
+            <option data-price="5">Oracal 641 070M</option>
+            <option data-price="5">Oracal 641 071M</option>
+            <option data-price="5">Oracal 641 080M</option>
+            <option data-price="5">Oracal 641 082M</option>
+            <option data-price="5">Oracal 641 084M</option>
+            <option data-price="5">Oracal 641 404M</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_non_standart_font" id="isNonStandartFont" checked>
+            <label class="form-check-label" for="isNonStandartFont">
+              сложный шрифт или шрифт с засечками
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="need_installation" id="needInstallation">
+            <label class="form-check-label" for="needInstallation">
+              нужен монтаж
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Способ доставки:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModeCourier" value="1" checked>
+            <label class="form-check-label" for="deliveryModeCourier">Курьером</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModePickup" value="2">
+            <label class="form-check-label" for="deliveryModePickup">Самовывоз</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="button" class="btn btn-info" id="btnCalc">Расчитать</button>
+        </div>
+
+        <div id="calcResult"></div>
+
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bamberjp/jQuery-Colorwheel@master/dist/jquery.colorwheel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.2.1/jquery.serializejson.min.js" integrity="sha512-SdWDXwOhhVS/wWMRlwz3wZu3O5e4lm2/vKK3oD0E5slvGFg/swCYyZmts7+6si8WeJYIUsTrT3KZWWCknSopjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="calc.js"></script>
+</body>
+</html>
