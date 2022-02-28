@@ -1,3 +1,14 @@
+var human_form_names = {
+  symbol_count: "Количество букв, шт",
+  symbol_height: "Высота букв, см",
+  light_type: "Тип подсветки",
+  face_color: "Цвет корпуса букв Лицо",
+  side_color: "Цвет корпуса букв Борт",
+  is_non_standart_font: "Cложный шрифт или шрифт с засечками",
+  need_installation: "Нужен монтаж"
+};
+
+
 $("#btnCalc").click(function() {
   var form = $('#mainForm').serializeJSON();
   console.log(form);
@@ -27,7 +38,35 @@ $("#btnCalc").click(function() {
   var price_frame = (form.symbol_height/100)*1.5*form.symbol_count*1000;
   var price_est = (price_by_light + price_face_color + price_side_color + price_font ) * form.symbol_height * form.symbol_count + price_frame;
 
-  $("#calcResult").html('Предварительная стоимость вашей вывески: <b>' + price_est + '</b>₽');
+  // $("#calcResult").html('<h2>Предварительная стоимость вашей вывески: <b>' + price_est + '</b>₽<h2>');
+
+
+  var table = $('#calcResultDetailsTable');
+  table.empty();
+  var tbody = $('<tbody>');
+  $.each(human_form_names, function(key, human_field_name) {
+    var value = form[key];
+    console.log(value);
+
+    if ( value == 'on' ) {
+      value = "да "
+    }
+    if (typeof value === 'undefined') {
+      value = "нет"
+    }
+    tbody.append( $('<tr>').append( $('<td>').text(human_field_name) ).append( $('<td>').text(value) ) );
+  });
+
+  if ( $('#deliveryModeCourier').is(':checked') ) {
+    tbody.append( $('<tr>').append( $('<td>').text('Доставка') ).append( $('<td>').text( $('#inputDeliveryDate').val() ) ) );
+  }
+
+  if ( $('#deliveryModePickup').is(':checked') ) {
+    tbody.append( $('<tr>').append( $('<td>').text('Самовывоз') ).append( $('<td>').text( $('#inputDeliveryDate').val() ) ) );
+  }
+
+  tbody.append( $('<tr>').append( $('<td>').text('ИТОГО, руб') ).append( $('<td>').text(price_est) ) );
+  table.append('<table class="table">').append(tbody);
 
 
 });
