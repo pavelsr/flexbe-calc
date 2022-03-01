@@ -35,6 +35,10 @@ $("#btnCalc").click(function() {
     }
   }
 
+  if (form.symbol_height < 12 ) {
+    form.symbol_height = 12;
+  }
+
   var price_frame = (form.symbol_height/100)*1.5*form.symbol_count*1000;
   var price_est = (price_by_light + price_face_color + price_side_color + price_font ) * form.symbol_height * form.symbol_count + price_frame;
 
