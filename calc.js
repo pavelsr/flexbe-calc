@@ -70,7 +70,7 @@ $("#btnCalc").click(function() {
   }
 
   tbody.append( $('<tr>').append( $('<td>').text('ИТОГО, руб') ).append( $('<td>').text(price_est) ) );
-  table.append('<table class="table">').append(tbody);
+  table.append( $('<table>').addClass('table table-bordered').append(tbody) );
 
 
 });
