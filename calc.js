@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     if ( $('#isLogo').is(':checked') ) {
       tbody.append( $('<tr>').append( $('<td>').text('Логотип, м2') ).append( $('<td>').text( $('input#inputLogoSquare').val() ) ) );
-      tbody.append( $('<tr>').append( $('<td>') ).append( $('<td>').text("Стоимость логотипа будет расчитана индивидуально") ) );
+      tbody.append( $('<tr>').append( $('<td>') ).append( $('<td>').append("<i>Стоимость логотипа будет расчитана индивидуально</i>") ) );
     }
   });
 });

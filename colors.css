@@ -1,22 +1,36 @@
-.o_020 {}
-.o_023 {}
+.o_020 { background-color: #FAA71A }
+.o_023 { background-color: #EAD294 }
+
+/* F2E010 */
 .o_025 { background-color: rgb(209,198,0) }
-.o_026 {}
+
+.o_026 { background-color: #630716 }
+
+/* CC2027 */
 .o_032 { background-color: rgb(204,49,28) }
+
+/* E04926 */
 .o_034 { background-color: rgb(224,84,0) }
-.o_036 {}
-.o_043 {}
-.o_045 {}
-.o_047 {}
-.o_050 {}
-.o_056 {}
+
+/* EF6923 */
+.o_036 { background-color: #EF6923 }
+.o_043 { background-color: #7960A2 }
+.o_045 { background-color: #F389B7 }
+.o_047 { background-color: #D83427 }
+.o_050 { background-color: #1C315E }
+.o_056 { background-color: #40A1D3 }
+
+.o_060m { background-color: #013C24 }
+
 .o_063 { background-color: rgb(74,182,0) }
+.o_063m { background-color: #69A643 }
+
 .o_070 { background-color: rgb(27,29,32) }
-.o_071 {}
-.o_080 {}
-.o_082 {}
-.o_084 {}
-.o_404 {}
+.o_071 { background-color: #747E7B }
+.o_080 { background-color: #56351C }
+.o_082 { background-color: #CCBF9E }
+.o_084 { background-color: #0473BB }
+.o_404 { background-color: #402A72 }
 
 
 /* https://rgb.to/ral/6018 */
