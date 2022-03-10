@@ -1,55 +1,74 @@
+function updateDelivery() {
+  $('#delivery_selected').show();
 
-// for results
-var human_form_names = {
-  symbol_count: "Количество букв, шт",
-  symbol_height: "Высота букв, см",
-  light_type: "Тип подсветки",
-  face_color: "Цвет корпуса букв Лицо",
-  side_color: "Цвет корпуса букв Борт",
-  is_non_standart_font: "Cложный шрифт или шрифт с засечками",
-  need_installation: "Нужен монтаж"
-};
+  if ( $('#deliveryModeCourier').is(':checked') ) {
+    $('#delivery_mode_selected').html('Доставка');
+  }
+
+  if ( $('#deliveryModePickup').is(':checked') ) {
+    $('#delivery_mode_selected').html('Самовывоз');
+  }
+
+  var delivery_date = new Date( $('#delivery_date').val() );
+  var delivery_date_str = delivery_date.getDate() + '/' + ( delivery_date.getMonth() + 1 ) + '/' + delivery_date.getFullYear();
+  $('#delivery_date_selected').html( delivery_date_str );
+}
+
+function updateLogo() {
+  if ( $('#need_logo').is(':checked') ) {
+    $('#logo_selected').show();
+    $('#delivery_mode_selected').html('Доставка');
+  }
+  else {
+    $('#logo_selected').hide();
+  }
+}
+
+
+function updateResultDetailsTable() {
+    if ( $('#symbol_height').val() > 60 ) {
+      $('#calcResultDetailsTable').hide();
+      $('#calcIndividualMsg').show();
+    }
+    else {
+      $('#calcResultDetailsTable').show();
+      $('#calcIndividualMsg').hide();
+      var updateEls = $('[data-update]');
+      updateEls.each(function() {
+        var id_name = $(this).data('update');
+        var id_val = $('#'+id_name).val();
+        if ( $('#'+id_name).attr('type') == 'checkbox' ) {
+          $('#'+id_name).is(':checked') ? ( id_val = 'да' ) : ( id_val = 'нет' );
+        }
+        $(this).html( id_val );
+      });
+    }
+}
+
+function viewColors() {
+  $('#face_color_view').removeClass().addClass( $('select#face_color option:selected').data('color-class') );
+  $('#side_color_view').removeClass().addClass( $('select#side_color option:selected').data('color-class') );
+}
 
 function calc_all() {
-
-    // alt select metadata by value
-    // var price_by_light = $('select#inputLightType option[value="' + light_type + '"]').data('price');
-
-    var price_by_light   = $('select#inputLightType option:selected').data('price');
-    var price_face_color = $('select#inputFaceColor option:selected').data('price');
-    var price_side_color = $('select#inputSideColor option:selected').data('price');
-
-    // form data
-    var is_non_standart_font = $('#isNonStandartFont').val();
-
-    var symbol_height        = $('#inputSymbolsHeight').val();
-    var symbol_count         = $('#inputSymbolsCount').val();
-
-    // print to result table
-    // text inputs
-    $('#SymbolsCountVal').html(symbol_count);
-    $('#SymbolsHeightVal').html(symbol_height);
-
-    // selects
-    $('#FaceColorVal').html( $('#inputFaceColor').val() );
-    $('#FaceColorVal').html( $('#inputFaceColor').val() );
-    $('#LightTypeVal').html( $('#inputLightType').val() );
-
-    // checkboxes
-    $('#isNonStandartFontVal').html( $('#isNonStandartFont').val() );
-    $('#needInstallationtVal').html( $('#needInstallation').val() );
+    var symbol_height = $('#symbol_height').val();
+    var symbols_count = $('#symbols_count').val();
+    // get <option data-price values
+    var price_by_light   = $('select#light_type option:selected').data('price');
+    var price_face_color = $('select#face_color option:selected').data('price');
+    var price_side_color = $('select#side_color option:selected').data('price');
 
     var price_font = 0;
 
-    if ( is_non_standart_font) {
+    if ( $('#is_non_standart_font').is(':checked') ) {
       if ( symbol_height < 21 ) {
-        price_font = 8;
+        price_font = 10;
       }
       else if ( symbol_height >= 21 && symbol_height <= 40 ) {
-        price_font = 5;
+        price_font = 7;
       }
       else if ( symbol_height > 40 && symbol_height <= 60 ) {
-        price_font = 3;
+        price_font = 5;
       }
       else {
         console.log("Font is too large, need to calc manually!");
@@ -60,52 +79,31 @@ function calc_all() {
       symbol_height = 12;
     }
 
-    var price_frame = (symbol_height/100)*1.5*symbol_count*1000;
-    var price_est = (price_by_light + price_face_color + price_side_color + price_font ) * symbol_height * symbol_count + price_frame;
-
+    var price_frame = (symbol_height/100)*1.5*symbols_count*1000;
+    var price_est = (price_by_light + price_face_color + price_side_color + price_font ) * symbol_height * symbols_count + price_frame;
+    $('#calcResultTotal').html(price_est);
     console.log(price_est);
+}
 
-    // $("#calcResult").html('<h2>Предварительная стоимость вашей вывески: <b>' + price_est + '</b>₽<h2>');
-
-    // var table = $('#calcResultDetailsTable');
-    // table.empty();
-    // var tbody = $('<tbody>');
-    // $.each(human_form_names, function(key, human_field_name) {
-    //   var value = form[key];
-    //   console.log(value);
-    //
-    //   if ( value == 'on' ) {
-    //     value = "да "
-    //   }
-    //   if (typeof value === 'undefined') {
-    //     value = "нет"
-    //   }
-    //   tbody.append( $('<tr>').append( $('<td>').text(human_field_name) ).append( $('<td>').text(value) ) );
-    // });
-    //
-    // if ( $('#deliveryModeCourier').is(':checked') ) {
-    //   tbody.append( $('<tr>').append( $('<td>').text('Доставка') ).append( $('<td>').text( $('#inputDeliveryDate').val() ) ) );
-    // }
-    //
-    // if ( $('#deliveryModePickup').is(':checked') ) {
-    //   tbody.append( $('<tr>').append( $('<td>').text('Самовывоз') ).append( $('<td>').text( $('#inputDeliveryDate').val() ) ) );
-    // }
-    //
-    // tbody.append( $('<tr>').append( $('<td>').append('<b>ИТОГО, руб</b>') ).append( $('<td>').append( '<b>'+ price_est + '</b>' ) ) );
-    // table.append( $('<table>').addClass('table table-bordered').append(tbody) );
-    //
-    // if ( $('#isLogo').is(':checked') ) {
-    //   tbody.append( $('<tr>').append( $('<td>').text('Логотип, м2') ).append( $('<td>').text( $('input#inputLogoSquare').val() ) ) );
-    //   tbody.append( $('<tr>').append( $('<td>') ).append( $('<td>').append("<i>Стоимость логотипа будет расчитана индивидуально</i>") ) );
-    // }
+function updateView() {
+  updateResultDetailsTable();
+  updateDelivery();
+  updateLogo();
+  viewColors();
+  calc_all();
 }
 
 
-
 $(document).ready(function() {
-  // calc_all();
+  var min_date = new Date();
+  min_date.setDate(min_date.getDate()+3);
+  min_date = min_date.toISOString().slice(0,10);
+  $("#delivery_date").attr("min", min_date );
+  $("#delivery_date").val( min_date );
 
-  $("#isLogo").click(function() {
+  updateView();
+
+  $("#need_logo").click(function() {
     var dyn_field_selector = "#dynLogoSquareInput";
     if ( $(this).is(":checked") ) {
       $(dyn_field_selector).show();
@@ -115,9 +113,7 @@ $(document).ready(function() {
     }
   });
 
-
   $( "form :input" ).change( function() {
-    console.log("change");
-    calc_all();
+    updateView();
   });
 });

@@ -13,131 +13,131 @@
 <body>
 
   <div class="container calculator mt-5 pt-4 pb-4 rounded gray-shadow" id="calcDiv">
-    <form id="mainForm" class="calc" method="POST" action="sendBig.php">
+    <form id="mainForm" class="calc">
       <div class="container">
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-sm-12">
             <h1>Калькулятор стоимости вывески <a href="https://innovad.ru/" target="_blank" class="badge badge-warning">alternative</a></h1>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-lg-6">
 
 
             <div class="form-group row">
-              <label for="inputSymbolsCount" class="col-sm-10 col-form-label">Количество букв</label>
+              <label for="symbols_count" class="col-sm-10 col-form-label">Количество букв</label>
               <div class="col-sm-2">
-                <input type="number" name="symbol_count" class="form-control" id="inputSymbolsCount" placeholder="5" value="25" size="2">
+                <input id="symbols_count" type="number" class="form-control" placeholder="5" value="10" size="2">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSymbolsCount" class="col-sm-10 col-form-label">Высота букв, см</label>
+              <label for="symbol_height" class="col-sm-10 col-form-label">Высота букв, см</label>
               <div class="col-sm-2">
-                <input type="number" name="symbol_height" class="form-control" id="inputSymbolsHeight" placeholder="5" value="50" size="2" min="5" max="60">
+                <input id="symbol_height" type="number" class="form-control" placeholder="5" value="60" size="2" min="5">
               </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputLightType" class="col-sm-3">Тип подсветки</label>
               <div class="col-sm-9">
-                <select name="light_type" class="form-control" id="inputLightType">
-                  <option data-price="40" data-value="no_light">Не световая</option>
-                  <option data-price="60" data-value="front_light">Световая</option>
-                  <option data-price="65" data-value="back_light" selected>Световая, с контражуром (прозрачный задник)</option>
+                <select id="light_type" class="form-control">
+                  <option data-price="55">Не световая</option>
+                  <option data-price="90">Световая</option>
+                  <option data-price="105" selected>Световая, с контражуром (прозрачный задник)</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputFaceColor" class="col-sm-3">Цвет "лица" <span class="badge badge-info tooltipColor" data-tooltip-content="#FaceColorPopoverContent">i</span></label>
+              <label for="face_color" class="col-sm-3">Цвет "лица"</label>
               <div class="col-sm-7">
-                <select name="face_color" class="form-control" id="inputFaceColor">
-                  <option data-price="0" >Белый (Oracal 641 010)</option>
-                  <option data-price="3" >Oracal 8500 020</option>
-                  <option data-price="3">Oracal 8500 023</option>
-                  <option data-price="3">Oracal 8500 025</option>
-                  <option data-price="3" selected>Oracal 8500 026</option>
-                  <option data-price="3">Oracal 8500 032</option>
-                  <option data-price="3">Oracal 8500 034</option>
-                  <option data-price="3">Oracal 8500 036</option>
-                  <option data-price="3">Oracal 8500 043</option>
-                  <option data-price="3">Oracal 8500 045</option>
-                  <option data-price="3">Oracal 8500 047</option>
-                  <option data-price="3">Oracal 8500 050</option>
-                  <option data-price="3">Oracal 8500 056</option>
-                  <option data-price="3">Oracal 8500 060</option>
-                  <option data-price="3">Oracal 8500 063</option>
-                  <option data-price="3">Oracal 8500 070</option>
-                  <option data-price="3">Oracal 8500 071</option>
-                  <option data-price="3">Oracal 8500 080</option>
-                  <option data-price="3">Oracal 8500 082</option>
-                  <option data-price="3">Oracal 8500 084</option>
-                  <option data-price="3">Oracal 8500 404</option>
+                <select id="face_color" class="form-control">
+                  <option data-price="0">Белый (Oracal 641 010)</option>
+                  <option data-price="20" data-color-class="o_020">Oracal 8500 020</option>
+                  <option data-price="20" data-color-class="o_023">Oracal 8500 023</option>
+                  <option data-price="20" data-color-class="o_025">Oracal 8500 025</option>
+                  <option data-price="20" data-color-class="o_026" selected>Oracal 8500 026</option>
+                  <option data-price="20" data-color-class="o_032">Oracal 8500 032</option>
+                  <option data-price="20" data-color-class="o_034">Oracal 8500 034</option>
+                  <option data-price="20" data-color-class="o_036">Oracal 8500 036</option>
+                  <option data-price="20" data-color-class="o_043">Oracal 8500 043</option>
+                  <option data-price="20" data-color-class="o_045">Oracal 8500 045</option>
+                  <option data-price="20" data-color-class="o_047">Oracal 8500 047</option>
+                  <option data-price="20" data-color-class="o_050">Oracal 8500 050</option>
+                  <option data-price="20" data-color-class="o_056">Oracal 8500 056</option>
+                  <option data-price="20" data-color-class="o_060">Oracal 8500 060</option>
+                  <option data-price="20" data-color-class="o_063">Oracal 8500 063</option>
+                  <option data-price="20" data-color-class="o_070">Oracal 8500 070</option>
+                  <option data-price="20" data-color-class="o_071">Oracal 8500 071</option>
+                  <option data-price="20" data-color-class="o_080">Oracal 8500 080</option>
+                  <option data-price="20" data-color-class="o_082">Oracal 8500 082</option>
+                  <option data-price="20" data-color-class="o_084">Oracal 8500 084</option>
+                  <option data-price="20" data-color-class="o_404">Oracal 8500 404</option>
                 </select>
               </div>
-              <div class="col-sm-2"></div>
+              <div class="col-sm-2"><div id="face_color_view"></div></div>
             </div>
 
             <div class="form-group row">
-              <label for="inputSideColor" class="col-sm-3">Цвет борта <span class="badge badge-info tooltipColor" data-tooltip-content="#SideColorPopoverContent">i</span></label>
+              <label for="side_color" class="col-sm-3">Цвет борта</label>
               <div class="col-sm-7">
-                <select name="side_color" class="form-control" id="inputSideColor">
-                  <option data-price="0">Черный (RAL 9005)</option>
+                <select id="side_color" class="form-control">
+                  <option data-price="0" data-color-class="ral_9005">Черный (RAL 9005)</option>
                   <option data-price="0">Белый (RAL 9003)</option>
-                  <option data-price="2">RAL 1021</option>
-                  <option data-price="2">RAL 2009</option>
-                  <option data-price="2">RAL 3020</option>
-                  <option data-price="2">RAL 5002</option>
-                  <option data-price="2">RAL 6018</option>
-                  <option data-price="2">RAL 8017</option>
-                  <option data-price="5">Oracal 641 020M</option>
-                  <option data-price="5">Oracal 641 023M</option>
-                  <option data-price="5">Oracal 641 025M</option>
-                  <option data-price="5" selected>Oracal 641 026M</option>
-                  <option data-price="5">Oracal 641 032M</option>
-                  <option data-price="5">Oracal 641 034M</option>
-                  <option data-price="5">Oracal 641 036M</option>
-                  <option data-price="5">Oracal 641 043M</option>
-                  <option data-price="5">Oracal 641 045M</option>
-                  <option data-price="5">Oracal 641 047M</option>
-                  <option data-price="5">Oracal 641 050M</option>
-                  <option data-price="5">Oracal 641 056M</option>
-                  <option data-price="5">Oracal 641 060M</option>
-                  <option data-price="5">Oracal 641 063M</option>
-                  <option data-price="5">Oracal 641 070M</option>
-                  <option data-price="5">Oracal 641 071M</option>
-                  <option data-price="5">Oracal 641 080M</option>
-                  <option data-price="5">Oracal 641 082M</option>
-                  <option data-price="5">Oracal 641 084M</option>
-                  <option data-price="5">Oracal 641 404M</option>
+                  <option data-price="15" data-color-class="ral_1021">RAL 1021</option>
+                  <option data-price="15" data-color-class="ral_2009">RAL 2009</option>
+                  <option data-price="15" data-color-class="ral_3020">RAL 3020</option>
+                  <option data-price="15" data-color-class="ral_5002">RAL 5002</option>
+                  <option data-price="15" data-color-class="ral_6018">RAL 6018</option>
+                  <option data-price="15" data-color-class="ral_8017">RAL 8017</option>
+                  <option data-price="20" data-color-class="o_020">Oracal 641 020M</option>
+                  <option data-price="20" data-color-class="o_023">Oracal 641 023M</option>
+                  <option data-price="20" data-color-class="o_025">Oracal 641 025M</option>
+                  <option data-price="20" data-color-class="o_026" selected>Oracal 641 026M</option>
+                  <option data-price="20" data-color-class="o_032">Oracal 641 032M</option>
+                  <option data-price="20" data-color-class="o_034">Oracal 641 034M</option>
+                  <option data-price="20" data-color-class="o_036">Oracal 641 036M</option>
+                  <option data-price="20" data-color-class="o_043">Oracal 641 043M</option>
+                  <option data-price="20" data-color-class="o_045">Oracal 641 045M</option>
+                  <option data-price="20" data-color-class="o_047">Oracal 641 047M</option>
+                  <option data-price="20" data-color-class="o_050">Oracal 641 050M</option>
+                  <option data-price="20" data-color-class="o_056">Oracal 641 056M</option>
+                  <option data-price="20" data-color-class="o_060">Oracal 641 060M</option>
+                  <option data-price="20" data-color-class="o_063">Oracal 641 063M</option>
+                  <option data-price="20" data-color-class="o_070">Oracal 641 070M</option>
+                  <option data-price="20" data-color-class="o_071">Oracal 641 071M</option>
+                  <option data-price="20" data-color-class="o_080">Oracal 641 080M</option>
+                  <option data-price="20" data-color-class="o_082">Oracal 641 082M</option>
+                  <option data-price="20" data-color-class="o_084">Oracal 641 084M</option>
+                  <option data-price="20" data-color-class="o_404">Oracal 641 404M</option>
                 </select>
               </div>
-              <div class="col-sm-2"></div>
+              <div class="col-sm-2"><div id="side_color_view"></div></div>
             </div>
 
             <div class="form-group row">
               <div class="col-sm-12">
 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="is_non_standart_font" id="isNonStandartFont" checked>
-                  <label class="form-check-label" for="isNonStandartFont">
+                  <input class="form-check-input" type="checkbox" id="is_non_standart_font" checked>
+                  <label class="form-check-label" for="is_non_standart_font">
                     сложный шрифт или шрифт с засечками
                   </label>
                 </div>
 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="is_logo" id="isLogo">
-                  <label class="form-check-label" for="isLogo">
+                  <input class="form-check-input" type="checkbox" id="need_logo">
+                  <label class="form-check-label" for="need_logo">
                     расчет логотипа
                   </label>
                 </div>
 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="need_installation" id="needInstallation">
-                  <label class="form-check-label" for="needInstallation">
+                  <input class="form-check-input" type="checkbox" id="need_installation">
+                  <label class="form-check-label" for="need_installation">
                     нужен монтаж
                   </label>
                 </div>
@@ -146,113 +146,55 @@
             </div>
 
             <div class="form-group row" id="dynLogoSquareInput">
-              <label for="inputLogoSquare" class="col-sm-3 col-form-label">Площать логотипа, м2</label>
-              <div class="col-sm-9">
-                <input type="number" name="logo_square" class="form-control" id="inputLogoSquare">
-              </div>
+                <label for="logo_square" class="col-sm-10 col-form-label">Площать логотипа, м2</label>
+                <div class="col-sm-2">
+                  <input type="number" id="logo_square" min="1" class="form-control">
+                </div>
             </div>
-
 
             <div class="form-group">
               <label>Способ получения:</label>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModeCourier" value="1" checked>
+                <input class="form-check-input" type="radio" name="delivery_mode" id="deliveryModeCourier" value="1" checked>
                 <label class="form-check-label" for="deliveryModeCourier">Доставка</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModePickup" value="2">
+                <input class="form-check-input" type="radio" name="delivery_mode" id="deliveryModePickup" value="2">
                 <label class="form-check-label" for="deliveryModePickup">Самовывоз</label>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputDeliveryDate" class="col-sm-3 col-form-label">Желаемая дата получения</label>
-              <div class="col-sm-9">
-                <input type="date" name="delivery_date" class="form-control" id="inputDeliveryDate">
+              <label for="delivery_date" class="col-sm-8 col-form-label">Желаемая дата получения</label>
+              <div class="col-sm-4">
+                <input type="date" id="delivery_date" class="form-control">
               </div>
             </div>
 
           </div>
 
           <div class="col-lg-6">
-            <div id="calcResult"></div>
             <div id="calcResultDetailsTable">
               <table class="table table-bordered">
                 <tbody>
-                  <tr><td>Количество букв, шт</td><td id="SymbolsCountVal"></td></tr>
-                  <tr><td>Высота букв, см</td><td id="SymbolsHeightVal">50</td></tr>
-                  <tr><td>Тип подсветки</td><td id="LightTypeVal">Световая, с контражуром (прозрачный задник)</td></tr>
-                  <tr><td>Цвет корпуса букв Лицо</td><td id="FaceColorVal">Oracal 8500 026</td></tr>
-                  <tr><td>Цвет корпуса букв Борт</td><td td id="SideColorVal">Oracal 641 026M</td></tr>
-                  <tr><td>Cложный шрифт или шрифт с засечками</td><td id="isNonStandartFontVal"></td></tr>
-                  <tr><td>Нужен монтаж</td><td id="needInstallationtVal"></td></tr>
-                  <tr><td>Доставка</td><td></td></tr>
-                  <tr><td><b>ИТОГО, руб</b></td><td><b>113750</b></td></tr>
+                  <tr><td>Количество букв, шт</td><td data-update="symbols_count"></td></tr>
+                  <tr><td>Высота букв, см</td><td data-update="symbol_height">50</td></tr>
+                  <tr><td>Тип подсветки</td><td data-update="light_type">Световая, с контражуром (прозрачный задник)</td></tr>
+                  <tr><td>Цвет корпуса букв Лицо</td><td data-update="face_color">Oracal 8500 026</td></tr>
+                  <tr><td>Цвет корпуса букв Борт</td><td data-update="side_color">Oracal 641 026M</td></tr>
+                  <tr><td>Cложный шрифт или шрифт с засечками</td><td data-update="is_non_standart_font"></td></tr>
+                  <tr id="logo_selected" class="hidden"><td>Расчет логотипа</td><td><span data-update="logo_square"></span> м2, индивидуальный расчет</td></tr>
+                  <tr><td>Нужен монтаж</td><td data-update="need_installation"></td></tr>
+                  <tr id="delivery_selected" class="hidden"><td id="delivery_mode_selected"></td><td id="delivery_date_selected"></td></tr>
+                  <tr><td><b>ИТОГО, руб</b></td><td><b id="calcResultTotal"></b></td></tr>
                 </tbody>
               </table>
             </div>
+            <div id="calcIndividualMsg" class="alert alert-warning" role="alert">
+              <b>Индивидуальный расчет</b>
+            </div>
           </div>
         </div>
-
-        <div class="tooltip_templates">
-          <div id="FaceColorPopoverContent">
-            <table border="1" style="width:100%">
-              <tbody>
-                <tr><td width="20%" class="o_020"></td><td width="80%">Oracal 8500 020</td></tr>
-                <tr><td width="20%" class="o_023"></td><td width="80%">Oracal 8500 023</td></tr>
-                <tr><td width="20%" class="o_025"></td><td width="80%">Oracal 8500 025</td></tr>
-                <tr><td width="20%" class="o_026"></td><td width="80%">Oracal 8500 026</td></tr>
-                <tr><td width="20%" class="o_032"></td><td width="80%">Oracal 8500 032</td></tr>
-                <tr><td width="20%" class="o_034"></td><td width="80%">Oracal 8500 034</td></tr>
-                <tr><td width="20%" class="o_036"></td><td width="80%">Oracal 8500 036</td></tr>
-                <tr><td width="20%" class="o_043"></td><td width="80%">Oracal 8500 043</td></tr>
-                <tr><td width="20%" class="o_045"></td><td width="80%">Oracal 8500 045</td></tr>
-                <tr><td width="20%" class="o_047"></td><td width="80%">Oracal 8500 047</td></tr>
-                <tr><td width="20%" class="o_050"></td><td width="80%">Oracal 8500 050</td></tr>
-                <tr><td width="20%" class="o_056"></td><td width="80%">Oracal 8500 056</td></tr>
-                <tr><td width="20%" class="o_063"></td><td width="80%">Oracal 8500 063</td></tr>
-                <tr><td width="20%" class="o_070"></td><td width="80%">Oracal 8500 070</td></tr>
-                <tr><td width="20%" class="o_071"></td><td width="80%">Oracal 8500 071</td></tr>
-                <tr><td width="20%" class="o_080"></td><td width="80%">Oracal 8500 080</td></tr>
-                <tr><td width="20%" class="o_082"></td><td width="80%">Oracal 8500 082</td></tr>
-                <tr><td width="20%" class="o_084"></td><td width="80%">Oracal 8500 084</td></tr>
-                <tr><td width="20%" class="o_404"></td><td width="80%">Oracal 8500 404</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div id="SideColorPopoverContent">
-            <table border="1" style="width:100%">
-              <tbody>
-                <tr><td width="20%" class="ral_1021"></td><td width="80%">RAL 1021</td></tr>
-                <tr><td width="20%" class="ral_2009"></td><td width="80%">RAL 2009</td></tr>
-                <tr><td width="20%" class="ral_3020"></td><td width="80%">RAL 3020</td></tr>
-                <tr><td width="20%" class="ral_5002"></td><td width="80%">RAL 5002</td></tr>
-                <tr><td width="20%" class="ral_6018"></td><td width="80%">RAL 6018</td></tr>
-                <tr><td width="20%" class="ral_8017"></td><td width="80%">RAL 8017</td></tr>
-                <tr><td width="20%" class="o_020"></td><td width="80%">Oracal 641 020M</td></tr>
-                <tr><td width="20%" class="o_023"></td><td width="80%">Oracal 641 023M</td></tr>
-                <tr><td width="20%" class="o_025"></td><td width="80%">Oracal 641 025M</td></tr>
-                <tr><td width="20%" class="o_026"></td><td width="80%">Oracal 641 026M</td></tr>
-                <tr><td width="20%" class="o_032"></td><td width="80%">Oracal 641 032M</td></tr>
-                <tr><td width="20%" class="o_034"></td><td width="80%">Oracal 641 034M</td></tr>
-                <tr><td width="20%" class="o_036"></td><td width="80%">Oracal 641 036M</td></tr>
-                <tr><td width="20%" class="o_043"></td><td width="80%">Oracal 641 043M</td></tr>
-                <tr><td width="20%" class="o_045"></td><td width="80%">Oracal 641 045M</td></tr>
-                <tr><td width="20%" class="o_047"></td><td width="80%">Oracal 641 047M</td></tr>
-                <tr><td width="20%" class="o_050"></td><td width="80%">Oracal 641 050M</td></tr>
-                <tr><td width="20%" class="o_056"></td><td width="80%">Oracal 641 056M</td></tr>
-                <tr><td width="20%" class="o_063"></td><td width="80%">Oracal 641 063M</td></tr>
-                <tr><td width="20%" class="o_070"></td><td width="80%">Oracal 641 070M</td></tr>
-                <tr><td width="20%" class="o_071"></td><td width="80%">Oracal 641 071M</td></tr>
-                <tr><td width="20%" class="o_080"></td><td width="80%">Oracal 641 080M</td></tr>
-                <tr><td width="20%" class="o_082"></td><td width="80%">Oracal 641 082M</td></tr>
-                <tr><td width="20%" class="o_084"></td><td width="80%">Oracal 641 084M</td></tr>
-                <tr><td width="20%" class="o_404"></td><td width="80%">Oracal 641 404M</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
       </div>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
