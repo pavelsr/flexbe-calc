@@ -22,150 +22,177 @@
           </div>
         </div>
 
-        <div class="form-group row">
-          <label for="inputSymbolsCount" class="col-sm-3 col-form-label">Количество букв</label>
-          <div class="col-sm-9">
-            <input type="number" name="symbol_count" class="form-control" id="inputSymbolsCount" placeholder="5" value="25" size="2">
+        <div class="row">
+          <div class="col-lg-6">
+
+
+            <div class="form-group row">
+              <label for="inputSymbolsCount" class="col-sm-10 col-form-label">Количество букв</label>
+              <div class="col-sm-2">
+                <input type="number" name="symbol_count" class="form-control" id="inputSymbolsCount" placeholder="5" value="25" size="2">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputSymbolsCount" class="col-sm-10 col-form-label">Высота букв, см</label>
+              <div class="col-sm-2">
+                <input type="number" name="symbol_height" class="form-control" id="inputSymbolsHeight" placeholder="5" value="50" size="2" min="5" max="60">
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputLightType" class="col-sm-3">Тип подсветки</label>
+              <div class="col-sm-9">
+                <select name="light_type" class="form-control" id="inputLightType">
+                  <option data-price="40" data-value="no_light">Не световая</option>
+                  <option data-price="60" data-value="front_light">Световая</option>
+                  <option data-price="65" data-value="back_light" selected>Световая, с контражуром (прозрачный задник)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputFaceColor" class="col-sm-3">Цвет "лица" <span class="badge badge-info tooltipColor" data-tooltip-content="#FaceColorPopoverContent">i</span></label>
+              <div class="col-sm-7">
+                <select name="face_color" class="form-control" id="inputFaceColor">
+                  <option data-price="0" >Белый (Oracal 641 010)</option>
+                  <option data-price="3" >Oracal 8500 020</option>
+                  <option data-price="3">Oracal 8500 023</option>
+                  <option data-price="3">Oracal 8500 025</option>
+                  <option data-price="3" selected>Oracal 8500 026</option>
+                  <option data-price="3">Oracal 8500 032</option>
+                  <option data-price="3">Oracal 8500 034</option>
+                  <option data-price="3">Oracal 8500 036</option>
+                  <option data-price="3">Oracal 8500 043</option>
+                  <option data-price="3">Oracal 8500 045</option>
+                  <option data-price="3">Oracal 8500 047</option>
+                  <option data-price="3">Oracal 8500 050</option>
+                  <option data-price="3">Oracal 8500 056</option>
+                  <option data-price="3">Oracal 8500 060</option>
+                  <option data-price="3">Oracal 8500 063</option>
+                  <option data-price="3">Oracal 8500 070</option>
+                  <option data-price="3">Oracal 8500 071</option>
+                  <option data-price="3">Oracal 8500 080</option>
+                  <option data-price="3">Oracal 8500 082</option>
+                  <option data-price="3">Oracal 8500 084</option>
+                  <option data-price="3">Oracal 8500 404</option>
+                </select>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputSideColor" class="col-sm-3">Цвет борта <span class="badge badge-info tooltipColor" data-tooltip-content="#SideColorPopoverContent">i</span></label>
+              <div class="col-sm-7">
+                <select name="side_color" class="form-control" id="inputSideColor">
+                  <option data-price="0">Черный (RAL 9005)</option>
+                  <option data-price="0">Белый (RAL 9003)</option>
+                  <option data-price="2">RAL 1021</option>
+                  <option data-price="2">RAL 2009</option>
+                  <option data-price="2">RAL 3020</option>
+                  <option data-price="2">RAL 5002</option>
+                  <option data-price="2">RAL 6018</option>
+                  <option data-price="2">RAL 8017</option>
+                  <option data-price="5">Oracal 641 020M</option>
+                  <option data-price="5">Oracal 641 023M</option>
+                  <option data-price="5">Oracal 641 025M</option>
+                  <option data-price="5" selected>Oracal 641 026M</option>
+                  <option data-price="5">Oracal 641 032M</option>
+                  <option data-price="5">Oracal 641 034M</option>
+                  <option data-price="5">Oracal 641 036M</option>
+                  <option data-price="5">Oracal 641 043M</option>
+                  <option data-price="5">Oracal 641 045M</option>
+                  <option data-price="5">Oracal 641 047M</option>
+                  <option data-price="5">Oracal 641 050M</option>
+                  <option data-price="5">Oracal 641 056M</option>
+                  <option data-price="5">Oracal 641 060M</option>
+                  <option data-price="5">Oracal 641 063M</option>
+                  <option data-price="5">Oracal 641 070M</option>
+                  <option data-price="5">Oracal 641 071M</option>
+                  <option data-price="5">Oracal 641 080M</option>
+                  <option data-price="5">Oracal 641 082M</option>
+                  <option data-price="5">Oracal 641 084M</option>
+                  <option data-price="5">Oracal 641 404M</option>
+                </select>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-12">
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="is_non_standart_font" id="isNonStandartFont" checked>
+                  <label class="form-check-label" for="isNonStandartFont">
+                    сложный шрифт или шрифт с засечками
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="is_logo" id="isLogo">
+                  <label class="form-check-label" for="isLogo">
+                    расчет логотипа
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="need_installation" id="needInstallation">
+                  <label class="form-check-label" for="needInstallation">
+                    нужен монтаж
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group row" id="dynLogoSquareInput">
+              <label for="inputLogoSquare" class="col-sm-3 col-form-label">Площать логотипа, м2</label>
+              <div class="col-sm-9">
+                <input type="number" name="logo_square" class="form-control" id="inputLogoSquare">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label>Способ получения:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModeCourier" value="1" checked>
+                <label class="form-check-label" for="deliveryModeCourier">Доставка</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModePickup" value="2">
+                <label class="form-check-label" for="deliveryModePickup">Самовывоз</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputDeliveryDate" class="col-sm-3 col-form-label">Желаемая дата получения</label>
+              <div class="col-sm-9">
+                <input type="date" name="delivery_date" class="form-control" id="inputDeliveryDate">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div id="calcResult"></div>
+            <div id="calcResultDetailsTable">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr><td>Количество букв, шт</td><td id="SymbolsCountVal"></td></tr>
+                  <tr><td>Высота букв, см</td><td id="SymbolsHeightVal">50</td></tr>
+                  <tr><td>Тип подсветки</td><td id="LightTypeVal">Световая, с контражуром (прозрачный задник)</td></tr>
+                  <tr><td>Цвет корпуса букв Лицо</td><td id="FaceColorVal">Oracal 8500 026</td></tr>
+                  <tr><td>Цвет корпуса букв Борт</td><td td id="SideColorVal">Oracal 641 026M</td></tr>
+                  <tr><td>Cложный шрифт или шрифт с засечками</td><td id="isNonStandartFontVal"></td></tr>
+                  <tr><td>Нужен монтаж</td><td id="needInstallationtVal"></td></tr>
+                  <tr><td>Доставка</td><td></td></tr>
+                  <tr><td><b>ИТОГО, руб</b></td><td><b>113750</b></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
-        <div class="form-group row">
-          <label for="inputSymbolsCount" class="col-sm-3 col-form-label">Высота букв, см</label>
-          <div class="col-sm-9">
-            <input type="number" name="symbol_height" class="form-control" id="inputSymbolsHeight" placeholder="5" value="50" size="2" min="5" max="60">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputLightType">Тип подсветки</label>
-          <select name="light_type" class="form-control" id="inputLightType">
-            <option data-price="40" data-value="no_light">Не световая</option>
-            <option data-price="60" data-value="front_light">Световая</option>
-            <option data-price="65" data-value="back_light" selected>Световая, с контражуром (прозрачный задник)</option>
-          </select>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputFaceColor">Цвет "лица" <span class="badge badge-info tooltipColor" data-tooltip-content="#FaceColorPopoverContent">i</span></label>
-          <select name="face_color" class="form-control" id="inputFaceColor">
-            <option data-price="0" >Белый (Oracal 641 010)</option>
-            <option data-price="3" >Oracal 8500 020</option>
-            <option data-price="3">Oracal 8500 023</option>
-            <option data-price="3">Oracal 8500 025</option>
-            <option data-price="3" selected>Oracal 8500 026</option>
-            <option data-price="3">Oracal 8500 032</option>
-            <option data-price="3">Oracal 8500 034</option>
-            <option data-price="3">Oracal 8500 036</option>
-            <option data-price="3">Oracal 8500 043</option>
-            <option data-price="3">Oracal 8500 045</option>
-            <option data-price="3">Oracal 8500 047</option>
-            <option data-price="3">Oracal 8500 050</option>
-            <option data-price="3">Oracal 8500 056</option>
-            <option data-price="3">Oracal 8500 060</option>
-            <option data-price="3">Oracal 8500 063</option>
-            <option data-price="3">Oracal 8500 070</option>
-            <option data-price="3">Oracal 8500 071</option>
-            <option data-price="3">Oracal 8500 080</option>
-            <option data-price="3">Oracal 8500 082</option>
-            <option data-price="3">Oracal 8500 084</option>
-            <option data-price="3">Oracal 8500 404</option>
-          </select>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputSideColor">Цвет борта <span class="badge badge-info tooltipColor" data-tooltip-content="#SideColorPopoverContent">i</span></label>
-          <select name="side_color" class="form-control" id="inputSideColor">
-            <option data-price="0">Черный (RAL 9005)</option>
-            <option data-price="0">Белый (RAL 9003)</option>
-            <option data-price="2">RAL 1021</option>
-            <option data-price="2">RAL 2009</option>
-            <option data-price="2">RAL 3020</option>
-            <option data-price="2">RAL 5002</option>
-            <option data-price="2">RAL 6018</option>
-            <option data-price="2">RAL 8017</option>
-            <option data-price="5">Oracal 641 020M</option>
-            <option data-price="5">Oracal 641 023M</option>
-            <option data-price="5">Oracal 641 025M</option>
-            <option data-price="5" selected>Oracal 641 026M</option>
-            <option data-price="5">Oracal 641 032M</option>
-            <option data-price="5">Oracal 641 034M</option>
-            <option data-price="5">Oracal 641 036M</option>
-            <option data-price="5">Oracal 641 043M</option>
-            <option data-price="5">Oracal 641 045M</option>
-            <option data-price="5">Oracal 641 047M</option>
-            <option data-price="5">Oracal 641 050M</option>
-            <option data-price="5">Oracal 641 056M</option>
-            <option data-price="5">Oracal 641 060M</option>
-            <option data-price="5">Oracal 641 063M</option>
-            <option data-price="5">Oracal 641 070M</option>
-            <option data-price="5">Oracal 641 071M</option>
-            <option data-price="5">Oracal 641 080M</option>
-            <option data-price="5">Oracal 641 082M</option>
-            <option data-price="5">Oracal 641 084M</option>
-            <option data-price="5">Oracal 641 404M</option>
-          </select>
-        </div>
-
-        <div class="form-group row">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="is_non_standart_font" id="isNonStandartFont" checked>
-            <label class="form-check-label" for="isNonStandartFont">
-              сложный шрифт или шрифт с засечками
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="is_logo" id="isLogo">
-            <label class="form-check-label" for="isLogo">
-              расчет логотипа
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group row" id="dynLogoSquareInput">
-          <label for="inputLogoSquare" class="col-sm-3 col-form-label">Площать логотипа, м2</label>
-          <div class="col-sm-9">
-            <input type="number" name="logo_square" class="form-control" id="inputLogoSquare">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="need_installation" id="needInstallation">
-            <label class="form-check-label" for="needInstallation">
-              нужен монтаж
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Способ получения:</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModeCourier" value="1" checked>
-            <label class="form-check-label" for="deliveryModeCourier">Доставка</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="deliveryMode" id="deliveryModePickup" value="2">
-            <label class="form-check-label" for="deliveryModePickup">Самовывоз</label>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputDeliveryDate" class="col-sm-3 col-form-label">Желаемая дата получения</label>
-          <div class="col-sm-9">
-            <input type="date" name="delivery_date" class="form-control" id="inputDeliveryDate">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <button type="button" class="btn btn-info" id="btnCalc">Расчитать</button>
-        </div>
-
-        <div id="calcResult"></div>
-
-        <div id="calcResultDetailsTable"></div>
 
         <div class="tooltip_templates">
           <div id="FaceColorPopoverContent">
